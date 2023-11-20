@@ -1,40 +1,57 @@
 {
     "caption": "Load Balancer",
     "name": "load_balancer",
-    "extends": "object",
-    "description": "The Load Balancer object contains information related to the device that is distributing incoming traffic to specified destinations.",
+    "extends": "_entity", 
+    "description": "The load balancer object describes the load balancer entity and contains additional information regarding the distribution of traffic across a network.",
     "attributes": {
-    "name": {
-        "caption": "Name",
-        "description": "The name of the Load Balancer.",
-        "requirement": "required"
-        },
+ 
     "metrics": {
         "caption": "Metrics",
-        "description": "The general purpose metrics associated with the Load Balancer.",
+        "description": "General purpose metrics associated with the load balancer.",
         "is_array": true,
         "requirement": "optional"
         },
     "dst_endpoint": { 
         "caption": "Destination Endpoint",
-        "description": "The destination that the Load Balancer is distibuting traffic to.",
-        "requirement": "required"
+        "description": "The destination that the load balancer is distibuting traffic to.",
+        "requirement": "recommended"
         },
     "code": {
         "caption": "Response Code",
-        "description": "The numeric response code detailing the connection from the Load Balancer to the destination target.",
+        "description": "The numeric response status code detailing the connection from the load balancer to the destination target.",
+        "requirement": "recommended"
+        },
+    "endpoint_responses":{
+        "caption": "Endpoint Responses",
+        "description": "An object containing the endpoint responses.",
+        "requirement": "recommended"
+    },    
+    "classification": {
+        "caption": "Classification",
+        "description": "The request classification as defined by the load balancer.",
         "requirement": "optional"
         },
     "status_detail": {
-        "caption": "Status Details",
-        "description": "The status details contains additional information about the event outcome.",
+        "caption": "Status Detail",
+        "description": "The status detail contains additional status information about the load balancer distribution event.",
         "requirement": "optional"
         },
     "error_message": {
         "caption": "Error Message",
-        "description": "The error message describing the Load Balancer distribution attempt.",
+        "description": "The load balancer error message.",
         "requirement": "optional"
+        },
+    "message": {
+        "caption": "Message",
+        "description": "The load balancer message.",
+        "requirement": "optional"
+        }, 
+    "name": {
+        "description": "The name of the load balancer."
+        },
+    "uid": {
+        "description": "The unique identfier for the load balancer."
         }
 
     }
-}
+} 

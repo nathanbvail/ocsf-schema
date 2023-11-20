@@ -1,18 +1,26 @@
 {
     "caption": "Endpoint Responses",
     "name": "endpoint_responses",
-    "description": "The Endpoint Responses object contains information regarding the connections to multiple endpoints.",
+    "description": "The Endpoint Responses object contains information regarding the connections to multiple destination endpoints.",
     "extends": "object",
     "attributes": {
         "codes": {
             "caption": "Response Code List",
-            "description": "A list of numeric response status codes detailing the connections from the Load Balancer to the destination targets.",
+            "description": "A list of numeric response status codes detailing the connection attempt to multiple destinations.",
             "requirement": "optional"
             },
         "endpoints": {
             "caption": "Endpoint Array",
-            "description": "An array of endpoints that fielded the connection attempt from the LB",
+            "description": "An array of endpoints that fielded the connection attempt.",
             "requirement": "optional"
         }
+    },
+    "constraints": {
+        "at_least_one": [
+          "endpoints",
+          "codes"
+        ]
     }
-  }
+}
+    
+  
